@@ -384,6 +384,7 @@ canvas {
   color: white;
   text-align: center;
   min-height: 106.5px;
+  bottom: 0;
 }
 
 .logo-footer img {
