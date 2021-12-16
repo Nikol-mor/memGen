@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>MemGen</title>
+  </head>
+  <body onload="onInit()">
+    <header class="main-header">
+      <div class="header-container main-layout flex space-between align-center">
+        <img src="./img/logo/LOGO.png" class="logo" />
+        <!-- <div class="logo">Memegen</div> -->
+        <nav id="mainMenu" class="main-nav main-menu-wrapper">
+          <!-- <nav class="main-nav flex align-center"> -->
+          <ul class="clean-list flex align-center justify-center main-menu">
+            <li>
+              <a href="#" class="nav gallery" onclick="onGallery()">Gallery</a>
+            </li>
+            <li>
+              <a href="#" class="nav sMemes" onclick="onMeme()">Your Memes</a>
+            </li>
+            <li><a href="#" class="nav about" onclick="onAbout()">About</a></li>
+          </ul>
+          <div class="toggle-menu-screen screen" onclick="onToggleMenu()"></div>
+        </nav>
+        <button class="toggle-menu-btn" onclick="onToggleMenu()">
+          <img src="./img/icons/hamburger.png.png" alt="" />
+        </button>
+        <!-- <div class="menu-btn none" onclick="onToggleMenu()">
+          <img src="./img/icons/hamburger.png.png" />
+        </div> -->
+      </div>
+    </header>
+
+    <!-- <div onclick="onToggleMenu()" class="screen-menu"></div> -->
+
+    <section class="grid-container gallery"></section>
+
+    <section class="saved-memes none"></section>
+
+    <section
+      class="
+        meme-editor-container
+        canvas-container
+        flex
+        justify-center
+        align-center
+        none
+      "
+    >
+      <canvas class="canvas" width="450" height="450"></canvas>
+      <div class="tools grid">
+        <input
+          type="text"
+          name="text"
+          class="text-input"
+          oninput="onChangeText(this.value)"
+          autofocus
+        />
+        <button class="btn-focus" onclick="onFocusLine()">
+          <img
+            src="./img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+            alt=""
+          />
+        </button>
+        <button class="btn-add-txt" onclick="onAddText()">
+          <img src="./img/icons/add.png" alt="" />
+        </button>
+        <button class="btn-erase" onclick="onEraseText()">
+          <img src="./img/icons/trash.png" alt="" />
+        </button>
+        <button class="bigger-txt" onclick="onSizeText('+')">
+          <img src="./img/icons/increase font - icon.png" alt="" />
+        </button>
+        <button class="smaller-txt" onclick="onSizeText('-')">
+          <img src="./img/icons/decrease font - icon.png" alt="" />
+        </button>
+        <button class="align-left" onclick="onAlignText('left')">
+          <img src="./img/icons/align-to-left.png" alt="" />
+        </button>
+        <button class="align-right" onclick="onAlignText('right')">
+          <img src="./img/icons/align-to-right.png" alt="" />
+        </button>
+        <button class="align-center" onclick="onAlignText('center')">
+          <img src="./img/icons/center-text-alignment.png" alt="" />
+        </button>
+        <select class="font-family" onchange="onChangeFont(this.value)">
+          <option value="impact">Impact</option>
+          <option value="monspace">Monospace</option>
+          <option value="mont">Mont</option>
+        </select>
+        <div>
+          <button class="btn-color-txt">
+            <img src="./img/icons/text stroke.png" alt="" />
+          </button>
+          <input
+            type="color"
+            name="stroke-color"
+            onchange="onChangeColor('stroke',this.value)"
+          />
+        </div>
+        <div>
+          <button class="btn-stroke-txt">
+            <img src="./img/icons/paint-board-and-brush.png" alt="" />
+          </button>
+          <input
+            type="color"
+            name="color-text"
+            onchange="onChangeColor('color',this.value)"
+          />
+        </div>
+        <button class="btn-download">
+          <a href="#" type="file" onclick="onDownload(this)">Download</a>
+        </button>
+      </div>
+    </section>
+
+    <section class="about-me flex row justify-center align-center">
+      <img src="./img/about/me.JPG" alt="some img" />
+      <div class="about-social flex column align-center">
+        <h2>Nicole Morozov Elezra</h2>
+        <p>Something something</p>
+        <div class="social flex justify-center">
+          <div class="fa facebook">
+            <!-- <img src="./img/icons/facebook-logo.png" alt="facebook" /> -->
+          </div>
+          <div class="fa linkedin">
+            <!-- <img src="./img/icons/linkedin-logo.png" alt="linkedin" /> -->
+          </div>
+          <div class="fa github">
+            <!-- <img src="./img/icons/github-logo.png" alt="github" /> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer flex align-center justify-center">
+      <div class="footer-text">
+        <div class="logo-footer"><img src="./img/logo/LOGO.png" /></div>
+        <p>all rights reserved 2021</p>
+      </div>
+    </footer>
+
+    <script src="./js/service/storage.service.js"></script>
+    <script src="./js/service/meme.service.js"></script>
+    <script src="./js/editor.controller.js"></script>
+    <script src="./js/meme.controller.js"></script>
+  </body>
+</html>

@@ -1,0 +1,395 @@
+/*********************** Fonts *****************/
+@font-face {
+  font-family: mont;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: mont-medium;
+  src: url(../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: mont-thin;
+  src: url(../fonts/montserrat/Montserrat-Thin.ttf);
+}
+
+@font-face {
+  font-family: mont-bold;
+  src: url(../fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: impact;
+  src: url(../fonts/Impact/impact.ttf);
+}
+
+@font-face {
+  font-family: fa;
+  src: url(/fonts/fa/fa-brands-400.ttf);
+}
+
+/****************  Helpers *************/
+.clean-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/************* hamburger & Mobile*************/
+
+/* /* .toggle-menu-screen {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(42, 42, 42, 0.6);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}  */
+
+.toggle-menu-btn {
+  display: none;
+}
+
+/* @media (max-width: 740px) {
+  .toggle-menu-btn{
+    display: block;
+  }
+
+  .open .toggle-menu-screen {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(42, 42, 42, 0.6);
+    z-index: 100;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+}
+
+
+@media (max-width: 740px) {
+  .main-nav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    background: #292929;
+    height: 100vh;
+    transition: transform 1s;
+   }
+   .main-nav ul{
+     flex-direction: column;
+   }
+  
+    .main-nav a {
+      height: auto;
+      line-height: 1;
+      padding: 20px 0;
+      width: 60vw;
+      border: none;
+      border-bottom: 1px solid #1e1e1e; }  */
+
+/**************** General **************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.hamburger {
+  height: 50px;
+  width: 50px;
+  display: none;
+}
+
+.logo {
+  height: 30px;
+}
+
+/************ Layout *******************/
+
+.main-layout {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/************** Header*******************/
+
+.main-header {
+  background-color: #ff7f00;
+}
+
+.header-container {
+  height: 66px;
+}
+
+.main-header .logo {
+  color: #fff;
+}
+
+.logo {
+  font-family: mont-medium;
+  font-size: 2.5rem;
+}
+
+.main-header .main-nav li {
+  padding: 18px;
+  box-sizing: content-box;
+}
+
+.main-header .main-nav li:hover {
+  cursor: pointer;
+  color: black;
+  box-shadow: 0 5px 0;
+}
+
+.main-header .main-nav li:hover > * {
+  color: black;
+}
+
+.main-header .main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: mont;
+  font-size: 1.1875rem;
+  line-height: 0.7125;
+}
+
+/*************** Mains ******************/
+
+.grid-container {
+  display: grid;
+  padding: 30px 60px;
+  background-color: #e3e3e3;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.grid-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.grid-container img:hover {
+  cursor: pointer;
+  border: 5px #ceb195 outset;
+}
+
+canvas {
+  display: block;
+  /* margin: 0 auto; */
+  background-color: rgb(209, 190, 190);
+  margin-inline-end: 70px;
+}
+
+.none {
+  display: none;
+}
+
+.tools img {
+  width: 20px;
+  height: 20px;
+}
+
+.meme-editor-container {
+  padding: 20px 20px;
+  background: #e3e3e3;
+}
+
+.meme-editor-container .canvas:hover {
+  cursor: grab;
+}
+
+.toggle-menu-btn img {
+  height: 25px;
+  width: 25px;
+}
+
+.tools button:not-last-child {
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 30%;
+}
+
+.btn-download a {
+  text-decoration: none;
+}
+
+.tools {
+  width: 45%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    /* '. . font font font'
+    'big small left center right'
+    'focus add erase color stroke'
+    '. btn btn btn . '; */
+    '. . focus add erase'
+    'big small left center right'
+    'font font font color stroke'
+    '. btn btn btn . ';
+  grid-gap: 10px;
+}
+
+.btn-focus {
+  grid-area: focus;
+}
+
+.btn-add-txt {
+  grid-area: add;
+}
+
+.btn-erase {
+  grid-area: erase;
+}
+
+.bigger-txt {
+  grid-area: big;
+}
+
+.smaller-txt {
+  grid-area: small;
+}
+
+.align-left {
+  grid-area: left;
+}
+
+.align-center {
+  grid-area: center;
+}
+
+.align-right {
+  grid-area: right;
+}
+
+.font-family {
+  grid-area: font;
+}
+
+.btn-color-txt {
+  grid-area: color;
+}
+
+.btn-stroke-txt {
+  grid-area: stroke;
+}
+
+.btn-download {
+  grid-area: btn;
+}
+
+/************** About ****************/
+
+.about-me {
+  font-family: mont;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.about-me img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-right: 100px;
+}
+/* .social-f {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #ff7f00;
+  text-align: center;
+  margin-inline-end: 10px;
+  border-radius: 10px;
+} */
+
+/* .social-f img {
+  display: block;
+  height: 2px;
+} */
+
+.fa {
+  font-family: fa;
+  color: #ff7f00;
+  font-size: 30px;
+}
+
+.fa.facebook::before {
+  content: '\f39e';
+}
+.fa.github::before {
+  content: '\f09b';
+}
+.fa.linkedin::before {
+  content: '\f08c';
+}
+
+.social div {
+  height: 40px;
+  width: 40px;
+}
+
+.social-nav a:hover {
+  background-color: #ff7f00;
+}
+
+/************* Footer **************/
+
+.footer {
+  font-family: mont;
+  background-color: #ff7f00;
+  color: white;
+  text-align: center;
+  min-height: 106.5px;
+}
+
+.logo-footer img {
+  height: 25px;
+}
+
+.logo-footer {
+  padding-top: 20px;
+}
