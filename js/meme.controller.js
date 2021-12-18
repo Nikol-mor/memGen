@@ -6,6 +6,7 @@ function onInit() {
 
   addListeners();
   renderGallery();
+  // renderKeywords();
   renderCanvas();
   renderSaved();
 }
@@ -45,6 +46,7 @@ function onClickedImg(imgId) {
   document.querySelector('.about-me').classList.add('none');
   document.querySelector('.meme-editor-container').classList.remove('none');
   document.querySelector('.saved-memes').classList.add('none');
+  document.querySelector('.search-keywords').classList.add('none');
   renderCanvas();
 }
 
@@ -53,6 +55,7 @@ function onMeme() {
   document.querySelector('.meme-editor-container').classList.add('none');
   document.querySelector('.saved-memes').classList.remove('none');
   document.querySelector('.about-me').classList.add('none');
+  document.querySelector('.search-keywords').classList.add('none');
 
   renderSaved();
 }
@@ -62,6 +65,7 @@ function onGallery() {
   document.querySelector('.about-me').classList.remove('none');
   document.querySelector('.meme-editor-container').classList.add('none');
   document.querySelector('.saved-memes').classList.add('none');
+  document.querySelector('.search-keywords').classList.remove('none');
   onInit();
 }
 
@@ -70,6 +74,7 @@ function onAbout() {
   document.querySelector('.about-me').classList.remove('none');
   document.querySelector('.meme-editor-container').classList.add('none');
   document.querySelector('.saved-memes').classList.add('none');
+  document.querySelector('.search-keywords').classList.add('none');
   onInit();
 }
 
@@ -78,7 +83,16 @@ function onToggleMenu() {
 }
 
 function onToggleKeywords() {
-  const elToggleBtn = document.querySelector('.show-more');
-  const elKeys = document.querySelectorAll('.keyword');
-  console.log(elKeys);
+  const isAllKeysSeen =
+    document.querySelector('.btn-more-less').innerText === 'More...'
+      ? false
+      : true;
+  console.log('isAllKeysSeen', isAllKeysSeen);
+  if (!isAllKeysSeen) {
+    document.querySelector('.secondary').classList.remove('none');
+    document.querySelector('.btn-more-less').innerText = 'Less...';
+  } else {
+    document.querySelector('.secondary').classList.add('none');
+    document.querySelector('.btn-more-less').innerText = 'More...';
+  }
 }

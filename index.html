@@ -30,7 +30,7 @@
 
     <div onclick="onToggleMenu()" class="screen-gray"></div>
 
-    <section class="search-keywords">
+    <section class="search-keywords grid">
       <form>
         <label for="keyword">
           <div>
@@ -38,6 +38,7 @@
           </div>
 
           <input
+            class="search-input"
             type="search"
             id="keyword"
             name="keyword"
@@ -63,6 +64,59 @@
           </datalist>
         </label>
       </form>
+      <div class="click-keywords flex justify-right">
+        <!-- <ul class="filter-keywords clean-list flex align-center justify-center"> -->
+        <ul class="filter-keywords clean-list">
+          <div class="primal flex justify-center space-around">
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">funny</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">awkward</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">famous</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">cute</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">animal</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">dog</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">baby</a>
+            </li>
+          </div>
+          <div class="secondary flex none justify-right space-around">
+            <li>
+              <a href="#" class="wordS1" onclick="onSearch(this.innerText)"
+                >sleep</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">knowledge</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">shock</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">amusing</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">unimpressed</a>
+            </li>
+            <li>
+              <a href="#" onclick="onSearch(this.innerText)">animation</a>
+            </li>
+          </div>
+        </ul>
+        <span class="btn-more-less" onclick="onToggleKeywords(this)"
+          >More...</span
+        >
+      </div>
 
       <!-- <div class="keywords-container flex">
         <div class="primal-keywords flex"></div>

@@ -51,6 +51,9 @@
 .justify-center {
   justify-content: center;
 }
+.justify-right {
+  justify-content: right;
+}
 
 .grid {
   display: grid;
@@ -291,6 +294,26 @@ canvas {
   font-size: 1rem;
 }
 
+.search-keywords {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas:
+    'serach filter'
+    'search filter2';
+}
+
+.search-input {
+  grid-area: search;
+}
+
+.primal {
+  grid-area: filter;
+}
+
+.secondary {
+  grid-area: filter2;
+}
+
 .text-meme {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -401,6 +424,47 @@ canvas {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 50px;
   justify-items: center;
+}
+
+.primal li {
+  padding-right: 10px;
+}
+
+.secondary li {
+  padding-right: 10px;
+}
+
+.primal a {
+  color: black;
+  text-decoration: none;
+  font-family: mont-bold;
+}
+.primal a:hover {
+  text-decoration: underline;
+}
+.secondary a:hover {
+  text-decoration: underline;
+}
+
+.secondary a {
+  color: black;
+  text-decoration: none;
+  font-family: mont-bold;
+}
+
+span {
+  color: orangered;
+  text-decoration: none;
+  font-family: mont-bold;
+}
+span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.search-input {
+  padding: 6px;
+  font-family: mont;
 }
 
 /************** About ****************/

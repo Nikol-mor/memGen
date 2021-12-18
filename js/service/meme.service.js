@@ -318,6 +318,7 @@ function getKeywords() {
 }
 
 function setFilter(keyword) {
+  console.log(keyword);
   gFilterBy = keyword;
   console.log('setFilter', gFilterBy);
 }
