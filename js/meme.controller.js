@@ -15,7 +15,7 @@ function renderGallery() {
   const imgs = getImgs();
   console.log('imgs in render', imgs);
   var strHTMLs = imgs.map((img) => {
-    return `<div class="img"><img src="./img/memes/${img.id}.jpg" onClick="onClickedImg(${img.id})"></div>`;
+    return `<div class="img"><img src="img/memes/${img.id}.jpg" onClick="onClickedImg(${img.id})"></div>`;
   });
   const elGallery = document.querySelector('.grid-container');
   elGallery.innerHTML = strHTMLs.join('');

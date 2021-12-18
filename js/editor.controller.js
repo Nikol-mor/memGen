@@ -6,6 +6,7 @@ var gStartPos;
 
 function renderCanvas() {
   const img = new Image();
+  console.log('img', img);
   img.src = getImg();
   console.log('img.src', img.src);
   img.onload = () => {
