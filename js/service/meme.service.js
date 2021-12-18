@@ -1,9 +1,21 @@
 'use strict';
 
+const KEY = 'memesDB';
+
 var gKeywordSearchCountMap = {
-  ///// to continue later
   funny: 12,
   awkward: 2,
+  famous: 5,
+  cute: 3,
+  animal: 3,
+  dog: 2,
+  baby: 4,
+  sleep: 2,
+  knowledge: 5,
+  shock: 3,
+  amusing: 2,
+  unimpressed: 1,
+  animation: 1,
 };
 
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend'];
@@ -77,7 +89,7 @@ var gImgs = [
   {
     id: 14,
     url: '../../img/memes/14.jpg',
-    keywords: ['shock', 'stare'],
+    keywords: ['shock'],
   },
   {
     id: 15,
@@ -103,19 +115,9 @@ var gImgs = [
 
 var gIsClicked = false;
 var gFocusedText;
+var gSaved;
+var gFilterBy;
 
-// var gMeme = {
-//   selectedImgId: 5,
-//   selectedLineIdx: 0,
-//   lines: [
-//     {
-//       txt: 'change your text here',
-//       size: 20,
-//       align: 'left',
-//       color: 'red',
-//     },
-//   ],
-// };
 var gMeme = {
   selectedImgId: 0,
   selectedLineIdx: 0,
@@ -134,17 +136,24 @@ var gMeme = {
 };
 
 function getImgs() {
-  return gImgs;
+  // const imgs = gImgs.filter((img) => img.keywords.includes(gFilterBy));
+  var arr = [];
+  for (let i = 0; i < gImgs.length; i++) {
+    const keyInImgs = gImgs[i].keywords;
+    if (keyInImgs.includes(gFilterBy)) {
+      arr.push(gImgs[i]);
+    }
+  }
+  console.log('arr', arr);
+  if (!arr.length) return gImgs;
+  else return arr;
 }
 
 function getImg() {
-  // console.log('getImg()');
   const imgId = gMeme.selectedImgId;
-  // console.log('imgId', imgId);
   const img = gImgs.find((img) => {
     return img.id === imgId;
   });
-  // console.log('img', img);
   return img.url;
 }
 
@@ -157,10 +166,6 @@ function getLines() {
 }
 
 function getLine() {
-  // gMeme.selectedLineIdx = (line) => {
-  //   if (!gFocusedText) return true;
-  //   return line.posX === gFocusedText.posX && line.posY === gFocusedText.posY;
-  // };
   return gMeme.lines[gMeme.selectedLineIdx];
 }
 
@@ -177,31 +182,12 @@ function changeText(txt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = txt;
 }
 
-// function changeFocusedText() {
-//   const lines = getLines();
-//   if (!lines.length) return;
-//   else gMeme.selectedLineIdx++;
-//   if (gMeme.selectedLineIdx >= lines.length) gMeme.selectedLineIdx = 0;
-//   gFocusedText = lines[gMeme.selectedLineIdx];
-// }
-
 function changeFocusLine() {
   const lines = getLines();
   if (!lines.length) return;
   if (gMeme.selectedLineIdx + 1 === lines.length) gMeme.selectedLineIdx = 0;
   else gMeme.selectedLineIdx++;
 }
-
-// function addText() {
-//   gMeme.lines.push({
-//     txt: 'your text',
-//     font: 'impact',
-//     posX: gElCanvas.width / 2,
-//     posY: gElCanvas.height / 20,
-//   });
-//   gMeme.selectedLineIdx = gMeme.lines.length - 1;
-//   gFocusedText = gMeme.lines[gMeme.selectedLineIdx];
-// }
 
 function addText() {
   if (gMeme.lines.length <= 1) {
@@ -231,7 +217,6 @@ function addText() {
   }
 
   gMeme.selectedLineIdx = gMeme.lines.length - 1;
-  // gFocusedText = gMeme.lines[gMeme.selectedLineIdx];
 }
 
 function changeColor(type, value) {
@@ -312,4 +297,27 @@ function eraseText() {
 function changeFont(font) {
   const line = getLine();
   line.font = font;
+}
+
+gSaved = getSaved();
+function save(canvas) {
+  gSaved.push(canvas);
+  saveToStorage(KEY, gSaved);
+  console.log('gSaved', gSaved);
+}
+
+function getSaved() {
+  const saved = loadFromStorage(KEY);
+  console.log('saved', saved);
+  if (!saved) return [];
+  return saved;
+}
+
+function getKeywords() {
+  return gKeywordSearchCountMap;
+}
+
+function setFilter(keyword) {
+  gFilterBy = keyword;
+  console.log('setFilter', gFilterBy);
 }
