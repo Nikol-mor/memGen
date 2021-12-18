@@ -6,7 +6,6 @@ function onInit() {
 
   addListeners();
   renderGallery();
-  // renderKeywords();
   renderCanvas();
   renderSaved();
 }

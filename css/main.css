@@ -106,10 +106,6 @@
     cursor: pointer;
   }
 
-  /* .main-header {
-    z-index: 2;
-  } */
-
   .header-container {
     z-index: 2;
   }
@@ -464,12 +460,8 @@ canvas {
   justify-items: center;
 }
 
-.about-me {
-  padding-bottom: 120px;
-}
-
 .saved-memes {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 500px;
   font-family: mont;
@@ -530,19 +522,6 @@ span:hover {
   border-radius: 50%;
   margin-right: 100px;
 }
-/* .social-f {
-  height: 2.5rem;
-  width: 2.5rem;
-  background-color: #ff7f00;
-  text-align: center;
-  margin-inline-end: 10px;
-  border-radius: 10px;
-} */
-
-/* .social-f img {
-  display: block;
-  height: 2px;
-} */
 
 .fa {
   font-family: fa;
@@ -587,21 +566,29 @@ span:hover {
 
 /************* Footer **************/
 
-.page-container {
+/* .page-container {
   position: relative;
   min-height: 100vh;
-}
-
+} */
 .footer {
   font-family: mont;
   background-color: #ff7f00;
   color: white;
   text-align: center;
   min-height: 106.5px;
-  bottom: 0px;
-  position: absolute;
-  width: 100%;
+  bottom: 0;
 }
+/* .footer {
+  font-family: mont;
+  background-color: #ff7f00;
+  color: white;
+  text-align: center;
+  min-height: 106.5px;
+  bottom: 0px; */
+/* position: fixed; */
+/* position: absolute; */
+/* width: 100%; */
+/* } */
 
 /* .footer {
   bottom: 0;

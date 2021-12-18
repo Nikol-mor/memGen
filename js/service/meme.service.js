@@ -136,7 +136,6 @@ var gMeme = {
 };
 
 function getImgs() {
-  // const imgs = gImgs.filter((img) => img.keywords.includes(gFilterBy));
   var arr = [];
   for (let i = 0; i < gImgs.length; i++) {
     const keyInImgs = gImgs[i].keywords;
@@ -145,7 +144,7 @@ function getImgs() {
     }
   }
   console.log('arr', arr);
-  if (!arr.length) return gImgs;
+  if (!arr.length || gFilterBy === 'show all') return gImgs;
   else return arr;
 }
 

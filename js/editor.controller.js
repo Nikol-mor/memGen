@@ -17,7 +17,7 @@ function renderCanvas() {
 }
 
 function addListeners() {
-  addMouseListeners(); // later add touch listeners
+  addMouseListeners();
 }
 
 function addMouseListeners() {
