@@ -131,6 +131,28 @@
   .about-me img {
     margin-left: 100px;
   }
+
+  .search-keywords {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .click-keywords {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .primal {
+    flex-direction: column;
+    align-items: center;
+  }
+  .secondary {
+    flex-direction: column;
+    align-items: center;
+  }
+  span {
+    align-self: center;
+  }
 }
 
 /**************** General **************/
@@ -145,6 +167,22 @@ body {
 
 .logo {
   height: 30px;
+}
+
+.fa.facebook,
+.fa.github,
+.fa.linkedin {
+  cursor: pointer;
+}
+
+.fa.facebook:hover {
+  color: rgb(12, 53, 238);
+}
+.fa.fa.github:hover {
+  color: rgb(0, 0, 0);
+}
+.fa.fa.fa.linkedin:hover {
+  color: rgb(36, 34, 211);
 }
 
 /************ Layout *******************/
@@ -426,6 +464,17 @@ canvas {
   justify-items: center;
 }
 
+.about-me {
+  padding-bottom: 120px;
+}
+
+.saved-memes {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  font-family: mont;
+}
+
 .primal li {
   padding-right: 10px;
 }
@@ -471,11 +520,11 @@ span:hover {
 
 .about-me {
   font-family: mont;
-  margin-top: 25px;
   margin-bottom: 50px;
 }
 
 .about-me img {
+  margin-top: 20px;
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -520,7 +569,28 @@ span:hover {
   background-color: #ff7f00;
 }
 
+.btn-download a,
+.btn-share a,
+.btn-save a {
+  color: white;
+  font-family: mont;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.btn-download a:hover,
+.btn-share a:hover,
+.btn-save a:hover {
+  background-color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+
 /************* Footer **************/
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
 
 .footer {
   font-family: mont;
@@ -528,8 +598,20 @@ span:hover {
   color: white;
   text-align: center;
   min-height: 106.5px;
-  /* margin-top: 260px; */
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
 }
+
+/* .footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #ff7f00;
+  position: fixed;
+  left: 0;
+  text-align: center;
+  height: 90px;
+} */
 
 .logo-footer img {
   height: 25px;

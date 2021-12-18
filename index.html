@@ -8,239 +8,242 @@
     <title>MemeGen</title>
   </head>
   <body onload="onInit()">
-    <header class="main-header">
-      <div class="header-container main-layout flex space-between align-center">
-        <img src="./img/logo/LOGO.png" class="logo" />
-        <nav id="mainMenu" class="main-nav main-menu-wrapper">
-          <ul class="clean-list flex align-center justify-center main-menu">
-            <li>
-              <a href="#" class="nav gallery" onclick="onGallery()">Gallery</a>
-            </li>
-            <li>
-              <a href="#" class="nav sMemes" onclick="onMeme()">Your Memes</a>
-            </li>
-            <li><a href="#" class="nav about" onclick="onAbout()">About</a></li>
-          </ul>
-        </nav>
-        <div class="hamburger" onclick="onToggleMenu()">
-          <img src="./img/icons/hamburger.png.png" />
-        </div>
-      </div>
-    </header>
-
-    <div onclick="onToggleMenu()" class="screen-gray"></div>
-
-    <section class="search-keywords grid">
-      <form>
-        <label for="keyword">
-          <div>
-            <!-- <img src="./img/icons/search-icon.png" alt="search" /> -->
-          </div>
-
-          <input
-            class="search-input"
-            type="search"
-            id="keyword"
-            name="keyword"
-            list="keywords"
-            placeholder="search by keyword"
-            onchange="onSearch(this.value)"
-          />
-          <datalist id="keywords">
-            <option value="funny"></option>
-            <option value="awkward"></option>
-            <option value="famous"></option>
-            <option value="cute"></option>
-            <option value="animal"></option>
-            <option value="dog"></option>
-            <option value="baby"></option>
-            <option value="sleep"></option>
-            <option value="knowledge"></option>
-            <option value="knowledge"></option>
-            <option value="shock"></option>
-            <option value="amusing"></option>
-            <option value="unimpressed"></option>
-            <option value="animation"></option>
-          </datalist>
-        </label>
-      </form>
-      <div class="click-keywords flex justify-right">
-        <!-- <ul class="filter-keywords clean-list flex align-center justify-center"> -->
-        <ul class="filter-keywords clean-list">
-          <div class="primal flex justify-center space-around">
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">funny</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">awkward</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">famous</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">cute</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">animal</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">dog</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">baby</a>
-            </li>
-          </div>
-          <div class="secondary flex none justify-right space-around">
-            <li>
-              <a href="#" class="wordS1" onclick="onSearch(this.innerText)"
-                >sleep</a
-              >
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">knowledge</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">shock</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">amusing</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">unimpressed</a>
-            </li>
-            <li>
-              <a href="#" onclick="onSearch(this.innerText)">animation</a>
-            </li>
-          </div>
-        </ul>
-        <span class="btn-more-less" onclick="onToggleKeywords(this)"
-          >More...</span
+    <div class="page-container">
+      <header class="main-header">
+        <div
+          class="header-container main-layout flex space-between align-center"
         >
-      </div>
+          <img src="./img/logo/LOGO.png" class="logo" />
+          <nav id="mainMenu" class="main-nav main-menu-wrapper">
+            <ul class="clean-list flex align-center justify-center main-menu">
+              <li>
+                <a href="#" class="nav gallery" onclick="onGallery()"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav sMemes" onclick="onMeme()">Your Memes</a>
+              </li>
+              <li>
+                <a href="#" class="nav about" onclick="onAbout()">About</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="hamburger" onclick="onToggleMenu()">
+            <img src="./img/icons/hamburger.png.png" />
+          </div>
+        </div>
+      </header>
 
-      <!-- <div class="keywords-container flex">
+      <div onclick="onToggleMenu()" class="screen-gray"></div>
+
+      <section class="search-keywords grid">
+        <form>
+          <label for="keyword">
+            <input
+              class="search-input"
+              type="search"
+              id="keyword"
+              name="keyword"
+              list="keywords"
+              placeholder="search by keyword"
+              onchange="onSearch(this.value)"
+            />
+            <datalist id="keywords">
+              <option value="funny"></option>
+              <option value="awkward"></option>
+              <option value="famous"></option>
+              <option value="cute"></option>
+              <option value="animal"></option>
+              <option value="dog"></option>
+              <option value="baby"></option>
+              <option value="sleep"></option>
+              <option value="knowledge"></option>
+              <option value="knowledge"></option>
+              <option value="shock"></option>
+              <option value="amusing"></option>
+              <option value="unimpressed"></option>
+              <option value="animation"></option>
+            </datalist>
+          </label>
+        </form>
+        <div class="click-keywords flex justify-right">
+          <!-- <ul class="filter-keywords clean-list flex align-center justify-center"> -->
+          <ul class="filter-keywords clean-list">
+            <div class="primal flex justify-center space-around">
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">funny</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">awkward</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">famous</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">cute</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">animal</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">dog</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">baby</a>
+              </li>
+            </div>
+            <div class="secondary flex none justify-right space-around">
+              <li>
+                <a href="#" class="wordS1" onclick="onSearch(this.innerText)"
+                  >sleep</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">knowledge</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">shock</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">amusing</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">unimpressed</a>
+              </li>
+              <li>
+                <a href="#" onclick="onSearch(this.innerText)">animation</a>
+              </li>
+            </div>
+          </ul>
+          <span class="btn-more-less" onclick="onToggleKeywords(this)"
+            >More...</span
+          >
+        </div>
+
+        <!-- <div class="keywords-container flex">
         <div class="primal-keywords flex"></div>
         <div class="show-more" onclick="onToggleKeywords(this)">More...</div>
       </div> -->
-    </section>
+      </section>
 
-    <section class="grid-container gallery"></section>
+      <section class="grid-container gallery"></section>
 
-    <section class="saved-memes grid"></section>
+      <section class="saved-memes grid none"></section>
 
-    <section
-      class="
-        meme-editor-container
-        canvas-container
-        flex
-        justify-center
-        align-center
-        none
-      "
-    >
-      <canvas class="canvas" width="450" height="450"></canvas>
-      <div class="tools">
-        <section class="text-meme grid">
-          <input
-            type="text"
-            name="text"
-            class="text-input"
-            oninput="onChangeText(this.value)"
-            autofocus
-          />
-          <button class="btn-focus" onclick="onFocusLine()">
-            <img
-              src="./img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
-              alt=""
-            />
-          </button>
-          <button class="btn-add-txt" onclick="onAddText()">
-            <img src="./img/icons/add.png" alt="" />
-          </button>
-          <button class="btn-erase" onclick="onEraseText()">
-            <img src="./img/icons/trash.png" alt="" />
-          </button>
-          <button class="align-left" onclick="onAlignText('left')">
-            <img src="./img/icons/align-to-left.png" alt="" />
-          </button>
-          <button class="align-right" onclick="onAlignText('right')">
-            <img src="./img/icons/align-to-right.png" alt="" />
-          </button>
-          <button class="align-center" onclick="onAlignText('center')">
-            <img src="./img/icons/center-text-alignment.png" alt="" />
-          </button>
-        </section>
-
-        <section class="style-meme grid">
-          <select class="font-family" onchange="onChangeFont(this.value)">
-            <option value="impact">Impact</option>
-            <option value="monspace">Monospace</option>
-            <option value="mont">Mont</option>
-          </select>
-          <button class="bigger-txt" onclick="onSizeText('+')">
-            <img src="./img/icons/increase font - icon.png" alt="" />
-          </button>
-          <button class="smaller-txt" onclick="onSizeText('-')">
-            <img src="./img/icons/decrease font - icon.png" alt="" />
-          </button>
-          <div>
-            <button class="btn-color-txt">
-              <img src="./img/icons/text stroke.png" alt="" />
-            </button>
+      <section
+        class="
+          meme-editor-container
+          canvas-container
+          flex
+          justify-center
+          align-center
+          none
+        "
+      >
+        <canvas class="canvas" width="450" height="450"></canvas>
+        <div class="tools">
+          <section class="text-meme grid">
             <input
-              type="color"
-              name="stroke-color"
-              onchange="onChangeColor('stroke',this.value)"
+              type="text"
+              name="text"
+              class="text-input"
+              oninput="onChangeText(this.value)"
+              autofocus
             />
-          </div>
-          <div>
-            <button class="btn-stroke-txt">
-              <img src="./img/icons/paint-board-and-brush.png" alt="" />
+            <button class="btn-focus" onclick="onFocusLine()">
+              <img
+                src="./img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                alt=""
+              />
             </button>
-            <input
-              type="color"
-              name="color-text"
-              onchange="onChangeColor('color',this.value)"
-            />
-          </div>
-        </section>
+            <button class="btn-add-txt" onclick="onAddText()">
+              <img src="./img/icons/add.png" alt="" />
+            </button>
+            <button class="btn-erase" onclick="onEraseText()">
+              <img src="./img/icons/trash.png" alt="" />
+            </button>
+            <button class="align-left" onclick="onAlignText('left')">
+              <img src="./img/icons/align-to-left.png" alt="" />
+            </button>
+            <button class="align-right" onclick="onAlignText('right')">
+              <img src="./img/icons/align-to-right.png" alt="" />
+            </button>
+            <button class="align-center" onclick="onAlignText('center')">
+              <img src="./img/icons/center-text-alignment.png" alt="" />
+            </button>
+          </section>
 
-        <section class="btn-options grid">
-          <button class="btn-download">
-            <a href="#" type="file" onclick="onDownload(this)">Download</a>
-          </button>
-          <button class="btn-share">
-            <a href="#" class="a-share" type="file" onclick="onShare(this)"
-              >Share</a
-            >
-          </button>
-          <button class="btn-save">
-            <a href="#" type="file" onclick="onSave(this)">Save</a>
-          </button>
-        </section>
-      </div>
-    </section>
+          <section class="style-meme grid">
+            <select class="font-family" onchange="onChangeFont(this.value)">
+              <option value="impact">Impact</option>
+              <option value="monspace">Monospace</option>
+              <option value="mont">Mont</option>
+            </select>
+            <button class="bigger-txt" onclick="onSizeText('+')">
+              <img src="./img/icons/increase font - icon.png" alt="" />
+            </button>
+            <button class="smaller-txt" onclick="onSizeText('-')">
+              <img src="./img/icons/decrease font - icon.png" alt="" />
+            </button>
+            <div>
+              <button class="btn-color-txt">
+                <img src="./img/icons/text stroke.png" alt="" />
+              </button>
+              <input
+                type="color"
+                name="stroke-color"
+                onchange="onChangeColor('stroke',this.value)"
+              />
+            </div>
+            <div>
+              <button class="btn-stroke-txt">
+                <img src="./img/icons/paint-board-and-brush.png" alt="" />
+              </button>
+              <input
+                type="color"
+                name="color-text"
+                onchange="onChangeColor('color',this.value)"
+              />
+            </div>
+          </section>
 
-    <section class="about-me flex row justify-center align-center">
-      <img src="./img/about/me.JPG" alt="some img" />
-      <div class="about-social flex column align-center">
-        <h2>Nicole Morozov Elezra</h2>
-        <p>Something something</p>
-        <div class="social flex justify-center">
-          <div class="fa facebook"></div>
-          <div class="fa linkedin"></div>
-          <div class="fa github"></div>
+          <section class="btn-options grid">
+            <button class="btn-download">
+              <a href="#" type="file" onclick="onDownload(this)">Download</a>
+            </button>
+            <button class="btn-share">
+              <a href="#" class="a-share" type="file" onclick="onShare(this)"
+                >Share</a
+              >
+            </button>
+            <button class="btn-save">
+              <a href="#" type="file" onclick="onSave(this)">Save</a>
+            </button>
+          </section>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="footer flex align-center justify-center">
-      <div class="footer-text">
-        <div class="logo-footer"><img src="./img/logo/LOGO.png" /></div>
-        <p>all rights reserved 2021</p>
-      </div>
-    </footer>
+      <section class="about-me flex row justify-center align-center">
+        <img src="./img/about/me.JPG" alt="some img" />
+        <div class="about-social flex column align-center">
+          <h2>Nicole Morozov Elezra</h2>
+          <p>Something something</p>
+          <div class="social flex justify-center">
+            <div class="fa facebook"></div>
+            <div class="fa linkedin"></div>
+            <div class="fa github"></div>
+          </div>
+        </div>
+      </section>
 
+      <footer class="footer flex align-center justify-center">
+        <div class="footer-text">
+          <div class="logo-footer"><img src="./img/logo/LOGO.png" /></div>
+          <p>all rights reserved 2021</p>
+        </div>
+      </footer>
+    </div>
     <script src="js/service/storage.service.js"></script>
     <script src="js/service/meme.service.js"></script>
     <script src="js/editor.controller.js"></script>
