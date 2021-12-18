@@ -7,6 +7,7 @@ var gStartPos;
 function renderCanvas() {
   const img = new Image();
   img.src = getImg();
+  console.log('img.src', img.src);
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
     drawText();
