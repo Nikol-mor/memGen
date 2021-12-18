@@ -455,7 +455,7 @@ canvas {
 span {
   color: orangered;
   text-decoration: none;
-  font-family: mont-bold;
+  font-family: mont;
 }
 span:hover {
   cursor: pointer;
