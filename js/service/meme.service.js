@@ -128,7 +128,7 @@ var gMeme = {
       align: 'left',
       color: 'white',
       stroke: 'black',
-      font: 'mont',
+      font: 'impact',
       pos: { x: 100, y: 40 },
       isDrag: false,
     },
@@ -197,7 +197,7 @@ function addText() {
       align: 'left',
       color: 'white',
       stroke: 'black',
-      font: 'mont',
+      font: 'impact',
       pos: { x: 100, y: 380 },
       isDrag: false,
     });
@@ -209,7 +209,7 @@ function addText() {
       align: 'left',
       color: 'white',
       stroke: 'black',
-      font: 'mont',
+      font: 'impact',
       pos: { x: 100, y: 210 },
       isDrag: false,
     });
@@ -219,7 +219,7 @@ function addText() {
 }
 
 function changeColor(type, value) {
-  if (type === 'text') gMeme.lines[gMeme.selectedLineIdx].color = value;
+  if (type === 'color') gMeme.lines[gMeme.selectedLineIdx].color = value;
   else gMeme.lines[gMeme.selectedLineIdx].stroke = value;
 }
 
