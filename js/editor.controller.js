@@ -132,6 +132,12 @@ function onSave() {
   const imgContent = gElCanvas.toDataURL();
   console.log('imgContent', imgContent);
   save(imgContent);
+  /**from here it's  new */
+  const el = document.querySelector('.user-msg');
+  el.classList.add('open');
+  setTimeout(() => {
+    el.classList.remove('open');
+  }, 2000);
 }
 
 function onShare() {

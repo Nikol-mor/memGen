@@ -24,7 +24,7 @@ function renderSaved() {
   const elSaved = document.querySelector('.saved-memes');
   const memes = getSaved();
   if (!memes.length) {
-    elSaved.innerHTML = `<h2>How dare you come here without saving memes?</h2>`;
+    elSaved.innerHTML = `<h2>No saved memes</h2>`;
     return;
   }
   var strHTMLs = memes.map((meme) => {

@@ -181,6 +181,22 @@ body {
   color: rgb(36, 34, 211);
 }
 
+.user-msg.open {
+  display: block;
+  bottom: 10px;
+  transition: bottom 0.5s;
+}
+.user-msg {
+  font-family: mont;
+  font-size: 23px;
+  display: none;
+  position: fixed;
+  bottom: -100px;
+  right: 10px;
+  background-color: rgb(65 173 71);
+  padding: 10px;
+}
+
 /************ Layout *******************/
 
 .main-layout {
